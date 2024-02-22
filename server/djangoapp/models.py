@@ -19,6 +19,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
 
+
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -27,8 +28,9 @@ class CarMake(models.Model):
     def __str__(self):
         return self.name  # Return the name as the string representation
 
+
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE) # Many-to-One relationship
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
