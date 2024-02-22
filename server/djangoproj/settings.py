@@ -29,10 +29,12 @@ SECRET_KEY =\
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost', 'https://cierratan-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'localhost', 'https://cierratan-8000.theiadockernext-1-labs'
+    '-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://cierratan-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'https://cierratan-8000.theiadockernext-1-labs'
+    '-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
 ]
 
 REST_FRAMEWORK = {
@@ -66,8 +68,7 @@ TEMPLATES = [
     {
         'BACKEND': 
             'django.template.backends.django.'
-            'DjangoTemplates'
-        ,
+            'DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'frontend/static'),
             os.path.join(BASE_DIR, 'frontend/build'),
