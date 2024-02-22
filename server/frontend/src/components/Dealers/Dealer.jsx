@@ -10,7 +10,6 @@ import Header from '../Header/Header';
 
 const Dealer = () => {
 
-
   const [dealer, setDealer] = useState({});
   const [reviews, setReviews] = useState([]);
   const [unreviewed, setUnreviewed] = useState(false);
