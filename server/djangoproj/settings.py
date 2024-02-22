@@ -67,10 +67,10 @@ ROOT_URLCONF = 'djangoproj.urls'
 
 TEMPLATES = [
     {
-        BACKEND = (
+        'BACKEND': 
             'django.template.backends.django.'
             'DjangoTemplates'
-        ),
+        ,
         'DIRS': [
             os.path.join(BASE_DIR, 'frontend/static'),
             os.path.join(BASE_DIR, 'frontend/build'),
