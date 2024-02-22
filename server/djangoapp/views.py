@@ -6,6 +6,7 @@ import json
 import logging
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
+from .models import CarMake, CarModel
 
 logger = logging.getLogger(__name__)
 
@@ -110,7 +111,6 @@ def add_review(request):
 
 
 def get_cars(request):
-    from .models import CarMake, CarModel
     count = CarMake.objects.filter().count()
     print(count)
     if count == 0:
