@@ -5,9 +5,6 @@
     },
     "parserOptions": {
       "ecmaVersion": 6
-    },
-    "rules": {
-      // Your specific linting rules here
     }
   }
   

@@ -62,7 +62,7 @@ def registration(request):
 
 
 def get_dealerships(request, state="All"):
-    if(state == "All"): 
+    if(state == "All") :
         endpoint = "/fetchDealers"
     else:
         endpoint = "/fetchDealers/" + state
@@ -89,19 +89,23 @@ def get_dealer_details(request, dealer_id):
     if (dealer_id):
         endpoint = "/fetchDealer/" + str(dealer_id)
         dealerships = get_request(endpoint)
-        return JsonResponse({"status": 200,"dealer": dealerships})
+        return JsonResponse({"status": 200, "dealer": dealerships})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
 
+
 def add_review(request):
-    if(request.user.is_anonymous is False):
+    if(request.user.is_anonymous is False) :
         data = json.loads(request.body)
         try:
             response = post_review(data)
             print(response)
             return JsonResponse({"status": 200})
         except Exception as err:
-            print(f"Unexpected {err=}, {type(err)=}")
+            print(
+                f"Unexpected {err=},
+                {type(err)=}"
+            )
             return JsonResponse({"status": 401, "message": "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
